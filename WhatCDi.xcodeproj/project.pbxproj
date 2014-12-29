@@ -2591,7 +2591,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "What/WhatCDi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Third Party Libraries/ZBarSDK\"",
@@ -2631,7 +2631,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "What/WhatCDi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Third Party Libraries/ZBarSDK\"",
