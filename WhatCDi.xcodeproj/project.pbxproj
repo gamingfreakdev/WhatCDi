@@ -750,7 +750,8 @@
 		4FFAD9DC17A317E000A41814 /* TorrentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TorrentsTableViewController.m; sourceTree = "<group>"; };
 		4FFFA06717F5F3CF00464421 /* WCDPostContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCDPostContent.h; sourceTree = "<group>"; };
 		4FFFA06817F5F3CF00464421 /* WCDPostContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCDPostContent.m; sourceTree = "<group>"; };
-		7A4F50C7F0A84772AB99CC73 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		B30A842C673F5764BC3DC223 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F1DBAAEEACD55D3D0C4EE4D3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1831,7 +1832,7 @@
 				4FC100A617283040001DCFD1 /* Third Party Libraries */,
 				4FC1005617282D02001DCFD1 /* Frameworks */,
 				4FC1005517282D02001DCFD1 /* Products */,
-				7A4F50C7F0A84772AB99CC73 /* Pods.xcconfig */,
+				7383A3D2766F7604ED2D7C6C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2121,6 +2122,15 @@
 			name = "Browse Torrents";
 			sourceTree = "<group>";
 		};
+		7383A3D2766F7604ED2D7C6C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBAAEEACD55D3D0C4EE4D3 /* Pods.debug.xcconfig */,
+				B30A842C673F5764BC3DC223 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2133,6 +2143,7 @@
 				4FC1005117282D02001DCFD1 /* Frameworks */,
 				4FC1005217282D02001DCFD1 /* Resources */,
 				4B2F95EABC9643F89F4BB10E /* Copy Pods Resources */,
+				DA8C34661A51711C009C29C6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -2149,13 +2160,6 @@
 		4FC1004C17282D02001DCFD1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = What;
-				TargetAttributes = {
-					4FC1005317282D02001DCFD1 = {
-						DevelopmentTeam = C3E3H4N48C;
-					};
-				};
 			};
 			buildConfigurationList = 4FC1004F17282D02001DCFD1 /* Build configuration list for PBXProject "WhatCDi" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2262,7 +2266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AB91705B70AD46C1923117EC /* Check Pods Manifest.lock */ = {
@@ -2279,6 +2283,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		DA8C34661A51711C009C29C6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "#!/bin/sh\nCODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Developer/iphoneentitlements401/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2497,7 +2514,6 @@
 /* Begin XCBuildConfiguration section */
 		4FC1008317282D03001DCFD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A4F50C7F0A84772AB99CC73 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2521,7 +2537,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -2530,7 +2546,6 @@
 		};
 		4FC1008417282D03001DCFD1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A4F50C7F0A84772AB99CC73 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2547,7 +2562,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
@@ -2558,7 +2573,7 @@
 		};
 		4FC1008617282D03001DCFD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A4F50C7F0A84772AB99CC73 /* Pods.xcconfig */;
+			baseConfigurationReference = F1DBAAEEACD55D3D0C4EE4D3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_NOTICES = NO;
 				ASSETCATALOG_WARNINGS = NO;
@@ -2576,12 +2591,13 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "What/WhatCDi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Third Party Libraries/ZBarSDK\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "-gta";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -2597,7 +2613,7 @@
 		};
 		4FC1008717282D03001DCFD1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A4F50C7F0A84772AB99CC73 /* Pods.xcconfig */;
+			baseConfigurationReference = B30A842C673F5764BC3DC223 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_NOTICES = NO;
 				ASSETCATALOG_WARNINGS = NO;
@@ -2615,12 +2631,13 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "What/WhatCDi-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Third Party Libraries/ZBarSDK\"",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "-gta";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
