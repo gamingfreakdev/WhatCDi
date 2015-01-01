@@ -148,28 +148,42 @@ static CGFloat const kAvatarWidth = 60.f;
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.myImage.frame = CGRectMake(self.frame.size.width - CELL_PADDING - kAvatarWidth, CELL_PADDING, kAvatarWidth, kAvatarWidth);
+    self.myImage.frame = CGRectMake(self.frame.size.width - CELL_PADDING - kAvatarWidth,
+                                    CELL_PADDING,
+                                    kAvatarWidth,
+                                    kAvatarWidth);
     
     CGFloat firstParagraphWidth = self.frame.size.width - CELL_PADDING*4 - kAvatarWidth;
-    self.firstParagraphLabel.frame = CGRectMake(CELL_PADDING, CELL_PADDING, firstParagraphWidth, 0.f);
+    self.firstParagraphLabel.frame = CGRectMake(CELL_PADDING,
+                                                CELL_PADDING,
+                                                firstParagraphWidth,
+                                                0.f);
     [self.firstParagraphLabel sizeToFit];
     CGRect firstParagraphFrame = self.firstParagraphLabel.frame;
     firstParagraphFrame.size.width = firstParagraphWidth;
     self.firstParagraphLabel.frame = firstParagraphFrame;
     
     CGFloat remainingParagraphsWidth = self.frame.size.width - CELL_PADDING*2;
-    self.remainingParagraphsLabel.frame = CGRectMake(CELL_PADDING, self.firstParagraphLabel.frame.origin.y + self.firstParagraphLabel.frame.size.height + CELL_PADDING, remainingParagraphsWidth, 0);
+    self.remainingParagraphsLabel.frame = CGRectMake(CELL_PADDING,
+                                                     self.firstParagraphLabel.frame.origin.y + self.firstParagraphLabel.frame.size.height + CELL_PADDING,
+                                                     remainingParagraphsWidth,
+                                                     0);
     [self.remainingParagraphsLabel sizeToFit];
     CGRect remainingParagraphsFrame = self.remainingParagraphsLabel.frame;
     remainingParagraphsFrame.size.width = remainingParagraphsWidth;
     self.remainingParagraphsLabel.frame = remainingParagraphsFrame;
     
+    
     CGFloat gitVersionWidth = self.frame.size.width - CELL_PADDING*2;
-    self.gitVersionLabel.frame = CGRectMake(CELL_PADDING, self.remainingParagraphsLabel.frame.origin.y + self.remainingParagraphsLabel.frame.size.height + CELL_PADDING, gitVersionWidth, 0);
+    self.gitVersionLabel.frame = CGRectMake(CELL_PADDING,
+                                            self.remainingParagraphsLabel.frame.origin.y + self.remainingParagraphsLabel.frame.size.height + CELL_PADDING,
+                                            gitVersionWidth,
+                                            0);
     [self.gitVersionLabel sizeToFit];
     CGRect gitVersionFrame = self.gitVersionLabel.frame;
     gitVersionFrame.size.width = gitVersionWidth;
     self.gitVersionLabel.frame = gitVersionFrame;
+    
     
     self.donateButton.frame = CGRectMake(self.frame.size.width/2 - self.buttonImage.size.width/2,
                                          self.frame.size.height - self.buttonImage.size.height - CELL_PADDING,
