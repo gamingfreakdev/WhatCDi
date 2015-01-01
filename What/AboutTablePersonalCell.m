@@ -2,12 +2,14 @@
 //  AboutTablePersonalCell.m
 //  What.CD
 //
-//  Created by What on 10/14/13.
+//  Created by What on 01/01/15.
 //  Copyright (c) 2013 What. All rights reserved.
 //
 
 #import "AboutTablePersonalCell.h"
 #import "UserSingleton.h"
+#import "GitVersion.h"
+
 
 static CGFloat const kAvatarWidth = 60.f;
 
@@ -18,6 +20,7 @@ static CGFloat const kAvatarWidth = 60.f;
 @property (nonatomic, strong) UILabel *firstParagraphLabel;
 @property (nonatomic, strong) UILabel *remainingParagraphsLabel;
 @property (nonatomic, strong) UILabel *bitcoinLabel;
+@property (nonatomic, strong) UILabel *gitVersionLabel;
 
 @end
 
@@ -50,7 +53,7 @@ static CGFloat const kAvatarWidth = 60.f;
             _firstParagraphLabel.numberOfLines = 0;
             NSString *username = [UserSingleton sharedInstance].username;
             username = (username == nil ? @"there" : username);
-            NSString *text = [NSString stringWithFormat:@"Hi %@! I'm carolina88, the developer of What.CD for iPhone (WhatCDi) and a member of the What community since 2009.", username];
+            NSString *text = [NSString stringWithFormat:@"Hi %@! This is What.CD for iPhone (WhatCDi). Originally developed by carolina88, and later picked up by the What.CD community to get it back up and running.", username];
             if ([Constants iOSVersion] >= 6.0) {
                 UIFont *boldFont = [Constants appFontWithSize:12.f bolded:YES];
                 const NSRange range = NSMakeRange(0, 4+username.length);
@@ -85,6 +88,27 @@ static CGFloat const kAvatarWidth = 60.f;
                 [_remainingParagraphsLabel setText:text];
             }
             [self.contentView addSubview:_remainingParagraphsLabel];
+        }
+        
+        if (!_gitVersionLabel)
+        {
+            _gitVersionLabel = [[UILabel alloc] init];
+            _gitVersionLabel.font = [Constants appFontWithSize:12.f];
+            _gitVersionLabel.textColor = [UIColor colorFromHexString:cMenuTableFontColor];
+            _gitVersionLabel.backgroundColor = [UIColor clearColor];
+            _gitVersionLabel.numberOfLines = 0;
+            NSString *text = [NSString stringWithFormat: @"Git Version: %s", GIT_VERSION];
+            if ([Constants iOSVersion] >= 6.0) {
+                UIFont *boldFont = [Constants appFontWithSize:12.f bolded:YES];
+                const NSRange boldRange = NSMakeRange(0, 12);
+                NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
+                [attributedText addAttribute:NSFontAttributeName value:boldFont range:boldRange];
+                [_gitVersionLabel setAttributedText:attributedText];
+            } else {
+                [_gitVersionLabel setText:text];
+            }
+            [self.contentView addSubview:_gitVersionLabel];
+            
         }
         
         if (!_donateButton) {
@@ -138,7 +162,22 @@ static CGFloat const kAvatarWidth = 60.f;
     remainingParagraphsFrame.size.width = remainingParagraphsWidth;
     self.remainingParagraphsLabel.frame = remainingParagraphsFrame;
     
-    self.donateButton.frame = CGRectMake(self.frame.size.width/2 - self.buttonImage.size.width/2, self.frame.size.height - self.buttonImage.size.height - CELL_PADDING, self.buttonImage.size.width, self.buttonImage.size.height);
+    CGFloat gitVersionWidth = self.frame.size.width - CELL_PADDING*2;
+    self.gitVersionLabel.frame = CGRectMake(CELL_PADDING, self.remainingParagraphsLabel.frame.origin.y + self.remainingParagraphsLabel.frame.size.height + CELL_PADDING, gitVersionWidth, 0);
+    [self.gitVersionLabel sizeToFit];
+    CGRect gitVersionFrame = self.gitVersionLabel.frame;
+    gitVersionFrame.size.width = gitVersionWidth;
+    self.gitVersionLabel.frame = gitVersionFrame;
+    
+    CGFloat donateButtonWidth = self.frame.size.width - CELL_PADDING*2;
+    self.donateButton.frame = CGRectMake(self.frame.size.width/2 - self.buttonImage.size.width/2, self.gitVersionLabel.frame.origin.y + self.gitVersionLabel.frame.size.height + CELL_PADDING, self.buttonImage.size.width, self.buttonImage.size.height);
+    //[self.donateButton sizeToFit];
+    //CGRect gitVersionFrame = self.gitVersionLabel.frame;
+    //gitVersionFrame.size.width = gitVersionWidth;
+    //self.gitVersionLabel.frame = gitVersionFrame;
+
+    
+    //self.donateButton.frame = CGRectMake(self.frame.size.width/2 - self.buttonImage.size.width/2, self.frame.size.height - self.buttonImage.size.height - CELL_PADDING, self.buttonImage.size.width, self.buttonImage.size.height);
     self.bitcoinLabel.frame = CGRectMake(0, self.donateButton.frame.origin.y + self.donateButton.frame.size.height/2 + 4.f, self.frame.size.width, 20.f);
 }
 

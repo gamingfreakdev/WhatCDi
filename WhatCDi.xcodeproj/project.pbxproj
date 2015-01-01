@@ -761,6 +761,7 @@
 		DA8B155C1A558F6F000DB698 /* AboutTableSiteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableSiteCell.m; sourceTree = "<group>"; };
 		DA8B15601A559AA6000DB698 /* AboutTablePersonalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTablePersonalCell.h; sourceTree = "<group>"; };
 		DA8B15611A559AA6000DB698 /* AboutTablePersonalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTablePersonalCell.m; sourceTree = "<group>"; };
+		DA8B15671A55AD4E000DB698 /* GitVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitVersion.h; sourceTree = "<group>"; };
 		F1DBAAEEACD55D3D0C4EE4D3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1917,6 +1918,7 @@
 		4FC1005E17282D03001DCFD1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DA8B15671A55AD4E000DB698 /* GitVersion.h */,
 				4FC1005F17282D03001DCFD1 /* WhatCDi-Info.plist */,
 				4FC1006017282D03001DCFD1 /* InfoPlist.strings */,
 				4FC1006317282D03001DCFD1 /* main.m */,
@@ -2162,6 +2164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FC1008517282D03001DCFD1 /* Build configuration list for PBXNativeTarget "WhatCDi" */;
 			buildPhases = (
+				DA8B15631A55AA0D000DB698 /* ShellScript */,
 				AB91705B70AD46C1923117EC /* Check Pods Manifest.lock */,
 				4FC1005017282D02001DCFD1 /* Sources */,
 				4FC1005117282D02001DCFD1 /* Frameworks */,
@@ -2309,6 +2312,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		DA8B15631A55AA0D000DB698 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "git=/usr/bin/git\nversion=`$git describe`\necho \"#define GIT_VERSION \\\"$version\\\"\" > \"${SRCROOT}/What/GitVersion.h\"\ntouch \"${BUILT_PRODUCTS_DIR}/Info.plist\"";
 		};
 		DA8C34661A51711C009C29C6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2621,6 +2637,9 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "What/WhatCDi-Info.plist";
+				INFOPLIST_PREFIX_HEADER = Info.plist;
+				INFOPLIST_PREPROCESS = YES;
+				"INFOPLIST_PREPROCESS[sdk=*]" = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2664,6 +2683,8 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "What/WhatCDi-Info.plist";
+				INFOPLIST_PREFIX_HEADER = Info.plist;
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
