@@ -19,6 +19,7 @@
 #import <objc/runtime.h>
 #import "MenuTable.h"
 #import "DonationTable.h"
+#import "AboutTable.h"
 #import "WCDThread.h"
 #import "ThreadTableViewController.h"
 
@@ -45,6 +46,7 @@
 @property (nonatomic, strong) MenuTable *menuTable;
 @property (nonatomic, strong) SettingsTable *settingsTable;
 @property (nonatomic, strong) DonationTable *donationTable;
+@property (nonatomic, strong) AboutTable *aboutTable;
 
 @property (nonatomic, readwrite) BOOL draggingFooter;
 @property (nonatomic, readwrite) BOOL draggingHeader;
@@ -92,9 +94,15 @@
     self.donationTable.parentController = self;
     [self.view addSubview:self.donationTable];
     
+    self.aboutTable = [[AboutTable alloc] initWithFrame:CGRectMake(0, -self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    self.aboutTable.parentController = self;
+    [self.view addSubview:self.aboutTable];
+
+    
     self.menuTable.isVisible = YES;
     self.settingsTable.isVisible = NO;
     self.donationTable.isVisible = NO;
+    self.aboutTable.isVisible = NO;
     self.draggingFooter = NO;
     self.draggingHeader = NO;
 }
@@ -184,6 +192,58 @@
     } completion:^(BOOL finished) {
         self.menuTable.isVisible = YES;
         self.donationTable.scrollEnabled = YES;
+    }];
+}
+
+- (void)pushAbout {
+    self.menuTable.isVisible = NO;
+    self.settingsTable.isVisible = NO;
+    self.donationTable.isVisible = NO;
+    self.aboutTable.isVisible = NO;
+    
+    if (self.mm_visibleDrawerFrame.size.width != MAX_DRAWER_WIDTH)
+    {
+        __weak MMDrawerController *weakDrawer = self.mm_drawerController;
+        [self.mm_drawerController setMaximumLeftDrawerWidth:MAX_DRAWER_WIDTH animated:YES completion:^(BOOL finished) {
+            [weakDrawer setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeNone];
+        }];
+    }
+    
+    self.menuTable.frame = CGRectMake(0, [self heightOffsetForiOS7], self.menuTable.frame.size.width, self.menuTable.frame.size.height);
+    self.aboutTable.frame = CGRectMake(0, -self.view.frame.size.height, self.donationTable.frame.size.width, self.donationTable.frame.size.height);
+    
+    [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.menuTable.frame = CGRectMake(0, self.view.frame.size.height, self.menuTable.frame.size.width, self.menuTable.frame.size.height);
+        self.aboutTable.frame = CGRectMake(0, [self heightOffsetForiOS7], self.donationTable.frame.size.width, self.donationTable.frame.size.height);
+    } completion:^(BOOL finished) {
+        self.aboutTable.isVisible = YES;
+        self.menuTable.scrollEnabled = YES;
+    }];
+}
+
+- (void)popAbout {
+    self.menuTable.isVisible = NO;
+    self.settingsTable.isVisible = NO;
+    self.donationTable.isVisible = NO;
+    self.aboutTable.isVisible = NO;
+    
+    if (self.mm_visibleDrawerFrame.size.width != MIN_DRAWER_WIDTH)
+    {
+        __weak MMDrawerController *weakDrawer = self.mm_drawerController;
+        [self.mm_drawerController setMaximumLeftDrawerWidth:MIN_DRAWER_WIDTH animated:YES completion:^(BOOL finished) {
+            [weakDrawer setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeBezelPanningCenterView|MMCloseDrawerGestureModePanningCenterView|MMCloseDrawerGestureModePanningNavigationBar|MMCloseDrawerGestureModeTapCenterView|MMCloseDrawerGestureModeTapNavigationBar|MMCloseDrawerGestureModePanningDrawerView];
+        }];
+    }
+    
+    self.menuTable.frame = CGRectMake(0, self.view.frame.size.height, self.menuTable.frame.size.width, self.menuTable.frame.size.height);
+    self.aboutTable.frame = CGRectMake(0, [self heightOffsetForiOS7], self.donationTable.frame.size.width, self.donationTable.frame.size.height);
+    
+    [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.menuTable.frame = CGRectMake(0, [self heightOffsetForiOS7], self.menuTable.frame.size.width, self.menuTable.frame.size.height);
+        self.aboutTable.frame = CGRectMake(0, -self.view.frame.size.height, self.donationTable.frame.size.width, self.donationTable.frame.size.height);
+    } completion:^(BOOL finished) {
+        self.menuTable.isVisible = YES;
+        self.aboutTable.scrollEnabled = YES;
     }];
 }
 
@@ -304,6 +364,13 @@
         drawerWidth = MAX(drawerWidth, MIN_DRAWER_WIDTH);
     }
     
+    else if (self.aboutTable.isVisible)
+    {
+        drawerWidth = MAX_DRAWER_WIDTH;
+        drawerWidth = MIN(drawerWidth, (drawerWidth - ((scrollView.contentOffset.y - bottom)*(40.f/60.f))/2));
+        drawerWidth = MAX(drawerWidth, MIN_DRAWER_WIDTH);
+    }
+    
     [self.mm_drawerController setMaximumLeftDrawerWidth:drawerWidth];
 }
 
@@ -335,6 +402,11 @@
     else if ([scrollView isKindOfClass:[DonationTable class]] && (scrollView.contentOffset.y - bottom) >= TABLE_OFFSET_FOR_SCROLL) {
         scrollView.scrollEnabled = NO;
         [self popDonation];
+    }
+    
+    else if ([scrollView isKindOfClass:[AboutTable class]] && scrollView.contentOffset.y <= (TABLE_OFFSET_FOR_SCROLL * -1)) {
+        scrollView.scrollEnabled = NO;
+        [self popAbout];
     }
 }
 

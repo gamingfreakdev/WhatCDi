@@ -17,5 +17,6 @@
 - (void)updateMenuHeaderWithUser:(WCDUser *)user;
 - (void)gotoFeedbackForum;
 - (void)gotoBugsForum;
+- (void)pushAbout;
 
 @end

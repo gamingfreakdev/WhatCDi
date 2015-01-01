@@ -387,6 +387,15 @@ static const CGFloat cKeyboardHeight = 216.f;
             });
         }
         
+        else if ([settingsObject.title isEqualToString:[NSString stringWithFormat:@"What.CD for iPhone v%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]]) {
+            // TODO : gamer76 | add going to about page here
+            double delayInSeconds = 0.2;
+            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                [self.parentController pushAbout];
+            });
+        }
+        
         else if ([settingsObject.title isEqualToString:@"Email the Developer"]) {
             if ([MFMailComposeViewController canSendMail])
             {
