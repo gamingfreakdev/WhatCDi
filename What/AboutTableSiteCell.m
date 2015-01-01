@@ -28,7 +28,7 @@
         
         if (!_siteDonationLabel) {
             _siteDonationLabel = [[UILabel alloc] init];
-            _siteDonationLabel.text = @"If you still have some extra cash, please also consider donating to What.CD. The site could really use our help and it’s up to you and me to keep it alive.";
+            _siteDonationLabel.text = @"If you have some extra cash, please consider donating to What.CD. The site could really use our help and it’s up to you and me to keep it alive.";
             _siteDonationLabel.textColor = [UIColor colorFromHexString:cMenuTableFontColor];
             _siteDonationLabel.font = [Constants appFontWithSize:12.f];
             _siteDonationLabel.backgroundColor = [UIColor clearColor];

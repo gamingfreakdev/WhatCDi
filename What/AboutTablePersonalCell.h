@@ -11,6 +11,4 @@
 
 @interface AboutTablePersonalCell : UITableViewCell
 
-@property (nonatomic, strong) DonateButton *donateButton;
-
 @end

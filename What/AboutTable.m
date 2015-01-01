@@ -71,7 +71,6 @@
         AboutTablePersonalCell *cell = (AboutTablePersonalCell *)[tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
         if (cell == nil) {
             cell = [[AboutTablePersonalCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            [cell.donateButton addTarget:self action:@selector(donationButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         }
         return cell;
     }
@@ -104,17 +103,17 @@
 
 // Fixed height rows
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     if (indexPath.row == 0) {
         return 40.f;
     }
     else if (indexPath.row == 1) {
-        return 350.f;
+        return 227.f;
     }
     else {
         return 140.f;
     }
 }
-
 
 #pragma mark - Table view delegate
 

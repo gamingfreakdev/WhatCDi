@@ -29,6 +29,7 @@ static CGFloat const kAvatarWidth = 60.f;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    
     if (self) {
         // Initialization code
         
@@ -73,20 +74,8 @@ static CGFloat const kAvatarWidth = 60.f;
             _remainingParagraphsLabel.textColor = [UIColor colorFromHexString:cMenuTableFontColor];
             _remainingParagraphsLabel.backgroundColor = [UIColor clearColor];
             _remainingParagraphsLabel.numberOfLines = 0;
-            NSString *text = @"I worked really hard on WhatCDi, and I hope it's noticeable. If you think it’s as awesome as I do and you would like to show your appreciation (aka buy me beer!!), please consider making a donation. By doing so, you'll be ensuring speedy and consistent updates in the future.\n\nIf you don't feel like donating, no hard feelings! I just hope you find the app useful. Thank you for your support and I hope you enjoy your stay :-)";
-            if ([Constants iOSVersion] >= 6.0) {
-                UIFont *italicFont = [Constants appFontWithSize:12.f oblique:YES];
-                const NSRange italicRange = NSMakeRange(9, 6);
-                UIFont *boldFont = [Constants appFontWithSize:12.f bolded:YES];
-                const NSRange boldRange = NSMakeRange(180, 17);
-                NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
-                [attributedText addAttribute:NSFontAttributeName value:italicFont range:italicRange];
-                [attributedText addAttribute:NSFontAttributeName value:boldFont range:boldRange];
-                
-                [_remainingParagraphsLabel setAttributedText:attributedText];
-            } else {
-                [_remainingParagraphsLabel setText:text];
-            }
+            NSString *text = @"carolina88 worked really hard on WhatCDi which is appreciated. Hopefully the community will be able to continue the development of this application!\n\nBelow is some information from the git repository on it's version, and the branch that it was built from.";
+            [_remainingParagraphsLabel setText:text];
             [self.contentView addSubview:_remainingParagraphsLabel];
         }
         
@@ -110,20 +99,6 @@ static CGFloat const kAvatarWidth = 60.f;
                 [_gitVersionLabel setText:text];
             }
             [self.contentView addSubview:_gitVersionLabel];
-            
-        }
-        
-        if (!_donateButton) {
-            _buttonImage = [UIImage imageNamed:@"../Images/donateButton.png"];
-            _donateButton = [DonateButton buttonWithType:UIButtonTypeCustom];
-            [_donateButton setBackgroundImage:_buttonImage forState:UIControlStateNormal];
-            [_donateButton.titleLabel setFont:[Constants appFontWithSize:20.f bolded:YES]];
-            [_donateButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
-            [_donateButton setTitleColor:[UIColor colorWithWhite:1.0 alpha:0.8] forState:UIControlStateNormal];
-            [_donateButton setTitle:@"Donate to the developer" forState:UIControlStateNormal];
-            _donateButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 16.f, 0);
-            _donateButton.donatePath = @"http://whatcdios.com/donations";
-            [self.contentView addSubview:_donateButton];
             
         }
         
@@ -184,16 +159,10 @@ static CGFloat const kAvatarWidth = 60.f;
     gitVersionFrame.size.width = gitVersionWidth;
     self.gitVersionLabel.frame = gitVersionFrame;
     
-    
-    self.donateButton.frame = CGRectMake(self.frame.size.width/2 - self.buttonImage.size.width/2,
-                                         self.frame.size.height - self.buttonImage.size.height - CELL_PADDING,
-                                         self.buttonImage.size.width,
-                                         self.buttonImage.size.height);
-    
-    self.bitcoinLabel.frame = CGRectMake(0,
-                                         self.donateButton.frame.origin.y + self.donateButton.frame.size.height/2 + 4.f,
-                                         self.frame.size.width,
-                                         20.0f);
+#ifdef DEBUG
+    CGFloat cellHeight = self.gitVersionLabel.frame.origin.y + self.gitVersionLabel.frame.size.height + CELL_PADDING;
+    NSLog(@"%@", [NSString stringWithFormat:@"[AboutTablePersonalCell.m] Cell Height: %.2f", cellHeight]);
+#endif
     
 }
 
