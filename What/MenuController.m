@@ -82,7 +82,7 @@
     [self.view addSubview:self.menuTable];
     self.menuTable.menuTableHeader = [[MenuTableHeader alloc] initWithFrame:CGRectMake(0, [MenuTableHeader height] - self.menuTable.frame.size.height, CELL_WIDTH, self.menuTable.frame.size.height)];
     //[self.menuTable.menuTableHeader.settingsButton addTarget:self action:@selector(pushSettings) forControlEvents:UIControlEventTouchUpInside];
-    [self.menuTable.menuTableHeader.heartButton addTarget:self action:@selector(pushDonation) forControlEvents:UIControlEventTouchUpInside];
+    //[self.menuTable.menuTableHeader.heartButton addTarget:self action:@selector(pushDonation) forControlEvents:UIControlEventTouchUpInside];
     [self.menuTable addSubview:self.menuTable.menuTableHeader];
     self.menuTable.menuTableFooter = [[MenuTableFooter alloc] initWithFrame:CGRectMake(0, self.menuTable.frame.size.height - [MenuTableFooter height], CELL_WIDTH, self.menuTable.frame.size.height)];
     [self.menuTable addSubview:self.menuTable.menuTableFooter];

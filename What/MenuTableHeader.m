@@ -84,11 +84,14 @@
         }
          */
         
-        if (!_heartButton) {
+        // gamer76 : Heart Button Away
+        // Commetting out the heart button as it has no reference for now
+        // Due to whatcdios.com being a dead domain.
+        /*if (!_heartButton) {
             _heartButton = [UIButton buttonWithType:UIButtonTypeCustom];
             [_heartButton setImage:[UIImage imageNamed:@"../Images/heart.png"] forState:UIControlStateNormal];
             [self addSubview:_heartButton];
-        }
+        }*/
         
     }
     return self;
@@ -165,8 +168,9 @@
     self.usernameLabel.frame = CGRectMake(self.avatarView.frame.origin.x + self.avatarView.frame.size.width + CELL_PADDING, self.avatarView.frame.origin.y, usernameWidth, self.avatarView.frame.size.height);
     self.usernameSelectedButton.frame = CGRectMake(self.avatarView.frame.origin.x - BUTTON_PADDING, self.avatarView.frame.origin.y - BUTTON_PADDING, self.avatarView.frame.size.width + usernameWidth + CELL_PADDING + BUTTON_PADDING*2, self.avatarView.frame.size.height + BUTTON_PADDING*2);
     
-    self.heartButton.frame = CGRectMake(self.frame.size.width - 80.f, self.frame.size.height - CELL_PADDING - 20.f, 20.f, 17.f);
-    [self.heartButton expandHitTestEdgeInsets];
+    // gamer76 : Heart Button Away
+    //self.heartButton.frame = CGRectMake(self.frame.size.width - 80.f, self.frame.size.height - CELL_PADDING - 20.f, 20.f, 17.f);
+    //[self.heartButton expandHitTestEdgeInsets];
     
     //self.settingsGearImage.frame = CGRectMake(CELL_WIDTH - 80.f, self.avatarView.frame.origin.y + (self.avatarView.frame.size.height/2) - (self.settingsGearImage.image.size.height/2), self.settingsGearImage.image.size.width, self.settingsGearImage.image.size.height);
     //self.settingsButton.frame = CGRectMake(self.settingsGearImage.frame.origin.x - BUTTON_PADDING, self.settingsGearImage.frame.origin.y - BUTTON_PADDING, self.settingsGearImage.frame.size.width + BUTTON_PADDING*2, self.settingsGearImage.frame.size.height + BUTTON_PADDING*2);

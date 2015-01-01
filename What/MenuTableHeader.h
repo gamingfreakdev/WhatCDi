@@ -13,7 +13,8 @@
 @interface MenuTableHeader : MenuTableHeaderFooterView
 
 //@property (nonatomic, strong) UIButton *settingsButton;
-@property (nonatomic, strong) UIButton *heartButton;
+// gamer76 : Heart Button Away
+//@property (nonatomic, strong) UIButton *heartButton;
 @property (nonatomic, strong) WCDUser *user;
 
 +(CGFloat)height;
