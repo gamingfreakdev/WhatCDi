@@ -8,7 +8,7 @@
 
 #import "AboutTablePersonalCell.h"
 #import "UserSingleton.h"
-#import "GitVersion.h"
+#import "GitInfo.h"
 
 
 static CGFloat const kAvatarWidth = 60.f;
@@ -97,12 +97,14 @@ static CGFloat const kAvatarWidth = 60.f;
             _gitVersionLabel.textColor = [UIColor colorFromHexString:cMenuTableFontColor];
             _gitVersionLabel.backgroundColor = [UIColor clearColor];
             _gitVersionLabel.numberOfLines = 0;
-            NSString *text = [NSString stringWithFormat: @"Git Version: %s", GIT_VERSION];
+            NSString *text = [NSString stringWithFormat: @"Git Version: %s\nGit Branch: %s", GIT_VERSION, GIT_BRANCH];
             if ([Constants iOSVersion] >= 6.0) {
                 UIFont *boldFont = [Constants appFontWithSize:12.f bolded:YES];
-                const NSRange boldRange = NSMakeRange(0, 12);
+                const NSRange boldRangeVersion = NSMakeRange(0, 12);
+                const NSRange boldRangeBranch = NSMakeRange(13 + strlen(GIT_VERSION), 11);
                 NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:text];
-                [attributedText addAttribute:NSFontAttributeName value:boldFont range:boldRange];
+                [attributedText addAttribute:NSFontAttributeName value:boldFont range:boldRangeVersion];
+                [attributedText addAttribute:NSFontAttributeName value:boldFont range:boldRangeBranch];
                 [_gitVersionLabel setAttributedText:attributedText];
             } else {
                 [_gitVersionLabel setText:text];
@@ -169,16 +171,16 @@ static CGFloat const kAvatarWidth = 60.f;
     gitVersionFrame.size.width = gitVersionWidth;
     self.gitVersionLabel.frame = gitVersionFrame;
     
-    CGFloat donateButtonWidth = self.frame.size.width - CELL_PADDING*2;
-    self.donateButton.frame = CGRectMake(self.frame.size.width/2 - self.buttonImage.size.width/2, self.gitVersionLabel.frame.origin.y + self.gitVersionLabel.frame.size.height + CELL_PADDING, self.buttonImage.size.width, self.buttonImage.size.height);
-    //[self.donateButton sizeToFit];
-    //CGRect gitVersionFrame = self.gitVersionLabel.frame;
-    //gitVersionFrame.size.width = gitVersionWidth;
-    //self.gitVersionLabel.frame = gitVersionFrame;
-
+    self.donateButton.frame = CGRectMake(self.frame.size.width/2 - self.buttonImage.size.width/2,
+                                         self.frame.size.height - self.buttonImage.size.height - CELL_PADDING,
+                                         self.buttonImage.size.width,
+                                         self.buttonImage.size.height);
     
-    //self.donateButton.frame = CGRectMake(self.frame.size.width/2 - self.buttonImage.size.width/2, self.frame.size.height - self.buttonImage.size.height - CELL_PADDING, self.buttonImage.size.width, self.buttonImage.size.height);
-    self.bitcoinLabel.frame = CGRectMake(0, self.donateButton.frame.origin.y + self.donateButton.frame.size.height/2 + 4.f, self.frame.size.width, 20.f);
+    self.bitcoinLabel.frame = CGRectMake(0,
+                                         self.donateButton.frame.origin.y + self.donateButton.frame.size.height/2 + 4.f,
+                                         self.frame.size.width,
+                                         20.0f);
+    
 }
 
 @end

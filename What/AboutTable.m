@@ -102,12 +102,13 @@
     [cell setBackgroundColor:tableView.backgroundColor];
 }
 
+// Fixed height rows
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         return 40.f;
     }
     else if (indexPath.row == 1) {
-        return 325.f;
+        return 350.f;
     }
     else {
         return 140.f;
