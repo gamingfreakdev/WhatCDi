@@ -67,7 +67,7 @@
 {
     [super viewDidLoad];
     
-    self.settingsTable = [[SettingsTable alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    self.settingsTable = [[SettingsTable alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
     
     //this stuff must stay out here, instead of putting it inside settingstable.m
     self.settingsTable.parentController = self;
@@ -76,6 +76,7 @@
     self.settingsTable.settingsTableHeader = [[SettingsTableHeader alloc] initWithFrame:CGRectMake(0, [SettingsTableHeader height] - self.settingsTable.frame.size.height, CELL_WIDTH, self.settingsTable.frame.size.height)];
     //self.settingsTable.settingsTableHeader.parentController = self;
     [self.settingsTable addSubview:self.settingsTable.settingsTableHeader];
+    self.settingsTable.contentInset = UIEdgeInsetsMake(-20, 0, 0, 0);
     
     //this stuff must stay out here, instead of putting it inside menutable.m
     self.menuTable = [[MenuTable alloc] initWithFrame:CGRectMake(0, [self heightOffsetForiOS7], self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
