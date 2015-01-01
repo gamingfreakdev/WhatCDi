@@ -63,7 +63,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
         
-        cell.textLabel.text = @"A personal note from carolina88:";
+        cell.textLabel.text = [NSString stringWithFormat:@"What.CD for iPhone v%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];;
         return cell;
     }
     
