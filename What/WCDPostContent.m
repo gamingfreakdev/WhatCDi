@@ -11,7 +11,9 @@
 @implementation WCDPostContent
 
 - (void)dealloc {
+#ifdef DEBUG
     NSLog(@"post content model dealloc");
+#endif
 }
 
 @end

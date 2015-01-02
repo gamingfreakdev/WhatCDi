@@ -2,8 +2,9 @@
 
 #import "DBAccountManager.h"
 #import "DBAccountInfo.h"
+#import "DBUtil.h"
 
-/** The account represents a particular user who has linked his account to your app. You can get
+/** The account represents a particular user who has linked their account to your app. You can get
  account objects from the [account manager](DBAccountManager).*/
 
 @interface DBAccount : NSObject
@@ -11,7 +12,7 @@
 /** @name Unlinking an account */
 
 /** This method unlinks a user's account from your app.
- 
+
  Once an account is unlinked, the local cache is deleted. If there is a
  [filesystem](DBFilesystem) object created with this account it will stop running. */
 - (void)unlink;
@@ -26,7 +27,9 @@
  method or from the Dropbox website. */
 @property (nonatomic, readonly, getter=isLinked) BOOL linked;
 
-/** Information about the user of this account. */
+/** Information about the user of this account, or `nil` if no info is available.
+ * Account info is fetched in the background.  To be notified when account info is
+ * available or updated, use <addObserver:block:>.*/
 @property (nonatomic, readonly) DBAccountInfo *info;
 
 
