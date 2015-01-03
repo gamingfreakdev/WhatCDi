@@ -70,7 +70,7 @@
 {
     [super viewDidAppear:animated];
     
-    [MarqueeLabel controllerViewAppearing:self];
+    [MarqueeLabel controllerViewDidAppear:self];
 }
 
 #pragma mark - Table view data source
@@ -263,7 +263,7 @@
 -(void)refresh
 {
     NSString *oldUserClass = self.user.memberClass;
-    int oldNumberOfSections = [self numberOfSectionsInTableView:self.tableView];
+    NSInteger oldNumberOfSections = [self numberOfSectionsInTableView:self.tableView];
     
     Sequencer *sequencer = [[Sequencer alloc] init];
     [sequencer enqueueStep:^(id result, SequencerCompletion completion) {
@@ -315,7 +315,7 @@
     
     [sequencer enqueueStep:^(id result, SequencerCompletion completion) {
         
-        NSURLRequest *request = [[API sharedInterface] getUserRecents:[NSString stringWithFormat:@"%i", self.user.idNum]];
+        NSURLRequest *request = [[API sharedInterface] getUserRecents:[NSString stringWithFormat:@"%li", (long)self.user.idNum]];
         [API getRequest:request completionBlockWithJSON:^(id JSON) {
             
             NSDictionary *JSONdict = (NSDictionary *)JSON;
