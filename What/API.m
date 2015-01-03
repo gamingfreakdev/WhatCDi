@@ -98,7 +98,7 @@
 
 -(NSURLRequest *)getInboxPage:(NSInteger)page type:(NSString *)type sort:(NSString *)sort search:(NSString *)search searchtype:(NSString *)searchtype;
 {    
-    NSArray *objects = @[@"inbox", [NSString stringWithFormat:@"%i", page], type, sort, search, searchtype];
+    NSArray *objects = @[@"inbox", [NSString stringWithFormat:@"%ld", (long)page], type, sort, search, searchtype];
     NSArray *keys = @[@"action", @"page", @"type", @"sort", @"search", @"searchtype"];
     NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     
@@ -120,7 +120,7 @@
 
 -(NSURLRequest *)getUserInfo:(NSInteger)userId
 {
-    NSArray *objects = @[@"user", [NSString stringWithFormat:@"%i",userId]];
+    NSArray *objects = @[@"user", [NSString stringWithFormat:@"%ld",(long)userId]];
     NSArray *keys = @[@"action", @"id"];
     NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     
@@ -155,7 +155,7 @@
 
 -(NSURLRequest *)getArtistSearch:(NSString *)searchTerm page:(NSInteger)page
 {
-    NSArray *objects = @[@"browse", searchTerm, [NSString stringWithFormat:@"%i", page]];
+    NSArray *objects = @[@"browse", searchTerm, [NSString stringWithFormat:@"%ld", (long)page]];
     NSArray *keys = @[@"action", @"artistname", @"page"];
     NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
         
@@ -166,7 +166,7 @@
 
 -(NSURLRequest *)getUserSearch:(NSString *)searchTerm page:(NSUInteger)page;
 {     
-    NSArray *objects = @[@"usersearch", searchTerm, [NSString stringWithFormat:@"%i", page]];
+    NSArray *objects = @[@"usersearch", searchTerm, [NSString stringWithFormat:@"%ld", (long)page]];
     NSArray *keys = @[@"action", @"search", @"page"];
     NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     
@@ -177,7 +177,7 @@
 
 -(NSURLRequest *)getAlbumSearch:(NSString *)searchTerm page:(NSInteger)page
 {
-    NSArray *objects = @[@"browse", searchTerm, [NSString stringWithFormat:@"%i", page]];
+    NSArray *objects = @[@"browse", searchTerm, [NSString stringWithFormat:@"%ld", (long)page]];
     NSArray *keys = @[@"action", @"groupname", @"page"];
     NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     
@@ -188,7 +188,7 @@
 
 -(NSURLRequest *)getRecentTorrentsForPage:(NSInteger)page
 {
-    NSArray *objects = @[@"browse", [NSString stringWithFormat:@"%i", page]];
+    NSArray *objects = @[@"browse", [NSString stringWithFormat:@"%ld", (long)page]];
     NSArray *keys = @[@"action", @"page"];
     NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     
@@ -222,7 +222,7 @@
 
 -(NSURLRequest *)getForumView:(NSInteger)Id page:(NSInteger)page
 {
-    NSArray *objects = @[@"forum", @"viewforum", [NSString stringWithFormat:@"%i", Id], [NSString stringWithFormat:@"%i", page]];
+    NSArray *objects = @[@"forum", @"viewforum", [NSString stringWithFormat:@"%ld", (long)Id], [NSString stringWithFormat:@"%ld", (long)page]];
     NSArray *keys = @[@"action", @"type", @"forumid", @"page"];
     NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     
@@ -251,7 +251,7 @@
 
 -(NSURLRequest *)postInboxMessageReply:(NSString *)body withConversationId:(NSInteger)convoId toUser:(NSInteger)userId
 {
-    NSArray *objects = @[@"takecompose", [UserSingleton sharedInstance].authkey, [NSString stringWithFormat:@"%i",userId], [NSString stringWithFormat:@"%i",convoId], body];
+    NSArray *objects = @[@"takecompose", [UserSingleton sharedInstance].authkey, [NSString stringWithFormat:@"%ld",(long)userId], [NSString stringWithFormat:@"%ld",(long)convoId], body];
     NSArray *keys = @[@"action", @"auth", @"toid", @"convid", @"body"];
     NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     
@@ -264,7 +264,7 @@
 
 -(NSURLRequest *)postForumThreadReply:(NSString *)body threadId:(NSInteger)threadId
 {
-    NSArray *objects = @[@"reply", [UserSingleton sharedInstance].authkey, [NSString stringWithFormat:@"%i",threadId], body];
+    NSArray *objects = @[@"reply", [UserSingleton sharedInstance].authkey, [NSString stringWithFormat:@"%ld",(long)threadId], body];
     NSArray *keys = @[@"action", @"auth", @"thread", @"body"];
     NSDictionary *params = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     
@@ -315,7 +315,7 @@
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSLog(@"response URL: %@", operation.response.URL);
-        NSLog(@"status: %i", operation.response.statusCode);
+        NSLog(@"status: %ld", (long)operation.response.statusCode);
         NSLog(@"headers: %@", operation.response.allHeaderFields);
         
         if (operation.response.statusCode == 0)

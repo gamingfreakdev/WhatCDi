@@ -107,7 +107,7 @@
 #pragma mark - Custom Methods
 
 -(void)refresh {
-    int oldSectionsCount = self.announcementGroup.announcements.count;
+    NSInteger oldSectionsCount = self.announcementGroup.announcements.count;
     NSURLRequest *request = [[API sharedInterface] getAnnouncements];
     [API getRequest:request completionBlockWithJSON:^(id JSON) {
         

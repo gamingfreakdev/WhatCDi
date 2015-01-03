@@ -113,7 +113,8 @@
     [super viewDidAppear:animated];
     
     //when closing popup image, restart marquee label
-    [MarqueeLabel controllerViewAppearing:self];
+    //[MarqueeLabel controllerViewAppearing:self];
+    [MarqueeLabel controllerViewDidAppear:self];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
@@ -441,7 +442,7 @@
         self.header.album = self.album;
         
         //reset marqueelabel
-        [MarqueeLabel controllerViewAppearing:self];
+        [MarqueeLabel controllerViewDidAppear:self];
         
         //update controller title and artist name just in case we're loading this from a link in a forum thread
         self.title = NSLocalizedString(self.album.name, self.album.name);

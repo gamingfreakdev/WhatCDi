@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) UILabel *footerLabel;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
-@property (nonatomic) int previousNumberOfRows;
+@property (nonatomic) NSInteger previousNumberOfRows;
 
 @end
 
@@ -83,7 +83,7 @@
 {
     if ([self.paginator.results count] != 0)
     {
-        self.footerLabel.text = [NSString stringWithFormat:@"Page %d out of %d", self.paginator.page, self.paginator.pageTotal];
+        self.footerLabel.text = [NSString stringWithFormat:@"Page %ld out of %ld", (long)self.paginator.page, (long)self.paginator.pageTotal];
     } else
     {
         self.footerLabel.text = @"";
@@ -120,6 +120,7 @@
     NSMutableArray *userIndexPaths = [[NSMutableArray alloc] init];
     NSInteger i = [self.paginator.results count] - [results count];
     
+    // TODO : Sort out warning about unused variable
     for (NSDictionary *result in results)
     {
         [userIndexPaths addObject:[NSIndexPath indexPathForRow:i inSection:0]];
