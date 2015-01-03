@@ -15,7 +15,6 @@
 #import "AppDelegate.h"
 #import "NSTask.h"
 #import "GoogleDrive.h"
-#import "Dropbox.h"
 #import "AlbumTableHeaderView.h"
 #import "Skydrive.h"
 #import "UserSingleton.h"
@@ -527,7 +526,7 @@
     }
     
     else {
-        //prompt to link Dropbox
+        //prompt to link google drive
         [appDelegate showAlertBannerWithTitle:@"Google Drive Isn't Linked" subtitle:@"Not so fast pal. You haven't linked your Google Drive account yet. You can find the option in the Settings panel." style:ALAlertBannerStyleNotify];
     }
 }

@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-//#import <Dropbox/Dropbox.h>
 #import "ProfileTableViewController.h"
 #import "AnnouncementsTableViewController.h"
 #import "CategoryTableViewController.h"
@@ -353,21 +352,6 @@
 }
 
 #pragma mark - Application Methods
-
-/*
--(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    DBAccount *account = [[DBAccountManager sharedManager] handleOpenURL:url];
-    if (account) {
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"DropboxLinkageChanged" object:nil];
-        
-        return YES;
-    }
-    
-    return NO;
-}
- */
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

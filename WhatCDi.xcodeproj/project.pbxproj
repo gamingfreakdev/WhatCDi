@@ -53,7 +53,6 @@
 		207EF72D175829CD006755AB /* ProfileJoinedDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 207EF72C175829CD006755AB /* ProfileJoinedDateView.m */; };
 		207EF73017582F4E006755AB /* ProfileRatioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 207EF72F17582F4E006755AB /* ProfileRatioCell.m */; };
 		207EF733175832F7006755AB /* ProfileAvatarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 207EF732175832F7006755AB /* ProfileAvatarCell.m */; };
-		207F4054176019360031E726 /* Dropbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 207F4053176019360031E726 /* Dropbox.m */; };
 		208C359A17B1DD4500997E4A /* MenuTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C359917B1DD4500997E4A /* MenuTableHeader.m */; };
 		2094746A178CDBFA00989FDE /* ForumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20947469178CDBFA00989FDE /* ForumTableViewCell.m */; };
 		2095EDE4176CD0560071F1D9 /* ArtistTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2095EDE3176CD0560071F1D9 /* ArtistTableViewCell.m */; };
@@ -195,7 +194,6 @@
 		4F91EAC3187F00C300BA443F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F91EAC0187F00C300BA443F /* Default-568h@2x.png */; };
 		4F91EAC4187F00C300BA443F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F91EAC1187F00C300BA443F /* Default.png */; };
 		4F91EAC5187F00C300BA443F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F91EAC2187F00C300BA443F /* Default@2x.png */; };
-		4F91EAC9187F011700BA443F /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F91EAC7187F011700BA443F /* Dropbox.framework */; };
 		4F962524174E9170001542E8 /* MenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F962523174E9170001542E8 /* MenuController.m */; };
 		4F962528174EA5F4001542E8 /* UIImage+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F962527174EA5F4001542E8 /* UIImage+Tools.m */; };
 		4F9AED3317FA422100DD6BE2 /* ProfileStatsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9AED3217FA422100DD6BE2 /* ProfileStatsCell.m */; };
@@ -374,8 +372,6 @@
 		207EF72F17582F4E006755AB /* ProfileRatioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileRatioCell.m; sourceTree = "<group>"; };
 		207EF731175832F7006755AB /* ProfileAvatarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileAvatarCell.h; sourceTree = "<group>"; };
 		207EF732175832F7006755AB /* ProfileAvatarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileAvatarCell.m; sourceTree = "<group>"; };
-		207F4052176019360031E726 /* Dropbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dropbox.h; path = What/Dropbox.h; sourceTree = "<group>"; };
-		207F4053176019360031E726 /* Dropbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dropbox.m; path = What/Dropbox.m; sourceTree = "<group>"; };
 		208C359817B1DD4500997E4A /* MenuTableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableHeader.h; sourceTree = "<group>"; };
 		208C359917B1DD4500997E4A /* MenuTableHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableHeader.m; sourceTree = "<group>"; };
 		20947468178CDBFA00989FDE /* ForumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForumTableViewCell.h; sourceTree = "<group>"; };
@@ -654,7 +650,6 @@
 		4F91EAC0187F00C300BA443F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4F91EAC1187F00C300BA443F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4F91EAC2187F00C300BA443F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		4F91EAC7187F011700BA443F /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dropbox.framework; path = "Third Party Libraries/Dropbox.framework"; sourceTree = "<group>"; };
 		4F962522174E9170001542E8 /* MenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuController.h; sourceTree = "<group>"; };
 		4F962523174E9170001542E8 /* MenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuController.m; sourceTree = "<group>"; };
 		4F962526174EA5F4001542E8 /* UIImage+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tools.h"; sourceTree = "<group>"; };
@@ -779,7 +774,6 @@
 				4FDC0BE1173ADB160023077E /* CoreVideo.framework in Frameworks */,
 				4FDC0BDF173ADB0F0023077E /* CoreMedia.framework in Frameworks */,
 				4FDC0BDD173ADAFE0023077E /* AVFoundation.framework in Frameworks */,
-				4F91EAC9187F011700BA443F /* Dropbox.framework in Frameworks */,
 				4F034C4317301BD9008C3322 /* ImageIO.framework in Frameworks */,
 				4FF581DC172EFC5000D1DA69 /* CoreText.framework in Frameworks */,
 				4FF581CC172EEE7F00D1DA69 /* libxml2.2.dylib in Frameworks */,
@@ -944,15 +938,6 @@
 				4F91EA98187F00BD00BA443F /* AppIcons */,
 			);
 			name = "App Icons and Launch Images";
-			sourceTree = "<group>";
-		};
-		207F40591760193B0031E726 /* Dropbox */ = {
-			isa = PBXGroup;
-			children = (
-				207F4052176019360031E726 /* Dropbox.h */,
-				207F4053176019360031E726 /* Dropbox.m */,
-			);
-			name = Dropbox;
 			sourceTree = "<group>";
 		};
 		208C359317B1DBAA00997E4A /* Menu and Settings */ = {
@@ -1796,7 +1781,6 @@
 			isa = PBXGroup;
 			children = (
 				4FE3FEEF17610C1B00ABF583 /* Skydrive */,
-				207F40591760193B0031E726 /* Dropbox */,
 				4FA58456175FE51E009C4798 /* Google Drive */,
 			);
 			name = "File Storage Services";
@@ -1858,7 +1842,6 @@
 		4FC1005617282D02001DCFD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4F91EAC7187F011700BA443F /* Dropbox.framework */,
 				205FE25C17A5629A0038E9CA /* libc++.dylib */,
 				4FF3D0B3177200770019DA76 /* Accelerate.framework */,
 				20CF923717680A3C0051AE1A /* MessageUI.framework */,
@@ -2387,7 +2370,6 @@
 				207EF73017582F4E006755AB /* ProfileRatioCell.m in Sources */,
 				207EF733175832F7006755AB /* ProfileAvatarCell.m in Sources */,
 				2058ADD4175EB67900566DBE /* UserSingleton.m in Sources */,
-				207F4054176019360031E726 /* Dropbox.m in Sources */,
 				4F6E66C9176222F900B2A55E /* SearchBarTableViewCell.m in Sources */,
 				4F6E66D31762370300B2A55E /* SearchUsersTableViewController.m in Sources */,
 				4F6E66D6176252CE00B2A55E /* SearchCategoryTableViewCell.m in Sources */,
