@@ -23,3 +23,4 @@ Pods
 Podfile.lock
 Info.plist
 What/GitInfo.h
+Archives/*
