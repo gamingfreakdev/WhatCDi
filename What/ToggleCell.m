@@ -93,7 +93,7 @@
     [super layoutSubviews];
     
     //77pt x 27pt is size given in Apple docs
-    self.checkmark.frame = CGRectMake(CELL_WIDTH - CELL_PADDING*1.5 - self.checkmark.image.size.width, (self.frame.size.height/2) - (self.checkmark.image.size.height/2), self.checkmark.image.size.width, self.checkmark.image.size.height);
+    self.checkmark.frame = CGRectMake(CELL_WIDTH - CELL_PADDING*1.5f - self.checkmark.image.size.width, (self.frame.size.height/2) - (self.checkmark.image.size.height/2), self.checkmark.image.size.width, self.checkmark.image.size.height);
     self.label.frame = CGRectMake(CELL_PADDING, 0, CELL_WIDTH - CELL_PADDING*2 - self.checkmark.image.size.width, self.frame.size.height);
     
 }

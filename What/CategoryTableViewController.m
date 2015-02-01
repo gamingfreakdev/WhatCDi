@@ -112,7 +112,7 @@
 
 -(void)refresh
 {    
-    int oldCategories = self.categoryGroup.categories.count;
+    NSUInteger oldCategories = self.categoryGroup.categories.count;
     
     NSURLRequest *request = [[API sharedInterface] getForumCategoryView];
     [API getRequest:request completionBlockWithJSON:^(id JSON) {

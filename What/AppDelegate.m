@@ -256,7 +256,7 @@
     NSInteger profileIndex = [self.navigationControllerNames indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return [(NSString *)obj hasPrefix:@"Inbox"];
     }];
-    NSString *inboxWithMessages = [UserSingleton sharedInstance].newMessages > 0 ? [NSString stringWithFormat:@"Inbox (%i)", [UserSingleton sharedInstance].newMessages] : @"Inbox";
+    NSString *inboxWithMessages = [UserSingleton sharedInstance].newMessages > 0 ? [NSString stringWithFormat:@"Inbox (%li)", (long)[UserSingleton sharedInstance].newMessages] : @"Inbox";
     [self.navigationControllerNames replaceObjectAtIndex:profileIndex withObject:inboxWithMessages];
     [self.menu updateMenuTable];
 }
