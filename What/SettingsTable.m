@@ -20,7 +20,7 @@
 #import "DefaultCell.h"
 #import "TextFieldCell.h"
 //#import "Dropbox.h"
-#import "GoogleDrive.h"
+//#import "GoogleDrive.h"
 #import <MessageUI/MFMailComposeViewController.h>
 
 //Settings Groups
@@ -115,10 +115,10 @@ static const CGFloat cKeyboardHeight = 216.f;
         //dropboxSecretObject.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"DropboxSecret"];
         //dropboxSecretObject.title = kSettingsDropboxSecret;
         
-        SettingsObject *googleDriveObject = [[SettingsObject alloc] init];
-        googleDriveObject.title = ([[GoogleDrive sharedDrive] isAuthorized] ? kSettingUnlinkGoogleDrive : kSettingLinkGoogleDrive);
+        //SettingsObject *googleDriveObject = [[SettingsObject alloc] init];
+        //googleDriveObject.title = ([[GoogleDrive sharedDrive] isAuthorized] ? kSettingUnlinkGoogleDrive : kSettingLinkGoogleDrive);
         
-        SettingsGroup *downloadsGroup = [[SettingsGroup alloc] initWithSettings:[NSArray arrayWithObjects:downloadToggle, googleDriveObject, nil]];
+        SettingsGroup *downloadsGroup = [[SettingsGroup alloc] initWithSettings:[NSArray arrayWithObjects:downloadToggle, nil]];
         downloadsGroup.title = kSettingsGroupDownloads;
         
         //ABOUT
@@ -191,7 +191,7 @@ static const CGFloat cKeyboardHeight = 216.f;
 {
     SettingsGroup *settingsGroup = [self.tableData objectAtIndex:2];
     SettingsObject *googleDriveObject = [settingsGroup.settingsObjects objectAtIndex:1];
-    googleDriveObject.title = ([[GoogleDrive sharedDrive] isAuthorized] ? kSettingUnlinkGoogleDrive : kSettingLinkGoogleDrive);
+    //googleDriveObject.title = ([[GoogleDrive sharedDrive] isAuthorized] ? kSettingUnlinkGoogleDrive : kSettingLinkGoogleDrive);
     
     [self beginUpdates];
     [self reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:1 inSection:2]] withRowAnimation:UITableViewRowAnimationFade];
@@ -526,8 +526,8 @@ App Version: %@\n\
             }
              */
             
-            AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-            if ([[GoogleDrive sharedDrive] isAuthorized])
+            //AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+            /*if ([[GoogleDrive sharedDrive] isAuthorized])
             {
                 if ([[GoogleDrive sharedDrive] unauthorize])
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"GoogleDriveLinkageChanged" object:nil];
@@ -540,6 +540,7 @@ App Version: %@\n\
                 [(UINavigationController *)appDelegate.window.rootViewController pushViewController:[[GoogleDrive sharedDrive] createAuthController] animated:YES];
                 //[[Dropbox sharedBox] linkFromController:self.parentController];
             }
+            */
         }
         
     }
