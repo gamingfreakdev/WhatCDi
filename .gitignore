@@ -22,5 +22,14 @@ DerivedData
 Pods
 Podfile.lock
 Info.plist
-What/GitInfo.h
 Archives/*
+
+# Auto Generated Files
+What/GitInfo.h
+
+# Other
+.svn/
+.DS_Store
+._*
+Thumbs.db
+desktop.ini

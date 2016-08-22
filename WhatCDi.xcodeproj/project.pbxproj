@@ -39,7 +39,6 @@
 		205CB19A17B345E90059226D /* SettingsTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 205CB19917B345E80059226D /* SettingsTableHeader.m */; };
 		205FE25D17A5629A0038E9CA /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 205FE25C17A5629A0038E9CA /* libc++.dylib */; };
 		206BD5DC176FF37E0086FA0E /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 206BD5DB176FF37E0086FA0E /* LoadingView.m */; };
-		207077A4181DD77C00916D18 /* GoogleDrive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA58454175FE517009C4798 /* GoogleDrive.m */; };
 		2071BA07172F477000AD4239 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2071B9EF172F477000AD4239 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2071BA0B172F477000AD4239 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 2071B9F8172F477000AD4239 /* NSDate+InternetDateTime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2071BA0C172F477000AD4239 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2071B9FA172F477000AD4239 /* NSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -121,9 +120,6 @@
 		4F08ED2817A6EC7C0014C437 /* PickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08ED2717A6EC7C0014C437 /* PickerCell.m */; };
 		4F08ED2B17A6ECC10014C437 /* PickerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F08ED2A17A6ECC10014C437 /* PickerObject.m */; };
 		4F0A45EF1799816400A84D12 /* AnnouncementsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0A45EE1799816400A84D12 /* AnnouncementsTableViewCell.m */; };
-		4F0B386A181B0B6300845006 /* libGTLTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0B3865181B0AE000845006 /* libGTLTouchStaticLib.a */; };
-		4F0B386C181B0BD600845006 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F0B386B181B0BD600845006 /* GTMOAuth2ViewTouch.xib */; };
-		4F0B386F181B0C6700845006 /* GTLDrive_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0B386D181B0C6700845006 /* GTLDrive_Sources.m */; };
 		4F0BF9C517567C1200C93FE8 /* AlbumTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0BF9C417567C1200C93FE8 /* AlbumTableHeaderView.m */; };
 		4F0D31C7178DD2A50046C61D /* MainCellGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0D31C6178DD2A50046C61D /* MainCellGradientView.m */; };
 		4F0D31CE178DDCA70046C61D /* StickyBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0D31CD178DDCA70046C61D /* StickyBannerView.m */; };
@@ -251,37 +247,6 @@
 		DA8B155D1A558F6F000DB698 /* AboutTableSiteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8B155C1A558F6F000DB698 /* AboutTableSiteCell.m */; };
 		DA8B15621A559AA6000DB698 /* AboutTablePersonalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8B15611A559AA6000DB698 /* AboutTablePersonalCell.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4F0B3862181B0AE000845006 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4F0B385B181B0AE000845006 /* GTL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F38F6A60B66E91D00B24B81;
-			remoteInfo = GTLFramework;
-		};
-		4F0B3864181B0AE000845006 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4F0B385B181B0AE000845006 /* GTL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F12027C11A4CA2F00BEB470;
-			remoteInfo = GTLTouchStaticLib;
-		};
-		4F0B3866181B0AE000845006 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4F0B385B181B0AE000845006 /* GTL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F12027D11A4CA2F00BEB470;
-			remoteInfo = GTLUnitTests;
-		};
-		4F0B3868181B0AE000845006 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4F0B385B181B0AE000845006 /* GTL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
-			remoteInfo = DevelopmentTestTool;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0481D0BD4370491996AF60B2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -509,10 +474,6 @@
 		4F08ED2A17A6ECC10014C437 /* PickerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerObject.m; sourceTree = "<group>"; };
 		4F0A45ED1799816400A84D12 /* AnnouncementsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementsTableViewCell.h; sourceTree = "<group>"; };
 		4F0A45EE1799816400A84D12 /* AnnouncementsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementsTableViewCell.m; sourceTree = "<group>"; };
-		4F0B385B181B0AE000845006 /* GTL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GTL.xcodeproj; path = "Third Party Libraries/GoogleDrive/GTL.xcodeproj"; sourceTree = "<group>"; };
-		4F0B386B181B0BD600845006 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTMOAuth2ViewTouch.xib; path = "Third Party Libraries/GoogleDrive/OAuth2/Touch/GTMOAuth2ViewTouch.xib"; sourceTree = SOURCE_ROOT; };
-		4F0B386D181B0C6700845006 /* GTLDrive_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTLDrive_Sources.m; path = "Third Party Libraries/GoogleDrive/Services/Drive/Generated/GTLDrive_Sources.m"; sourceTree = "<group>"; };
-		4F0B386E181B0C6700845006 /* GTLDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTLDrive.h; path = "Third Party Libraries/GoogleDrive/Services/Drive/Generated/GTLDrive.h"; sourceTree = "<group>"; };
 		4F0BF9C317567C1200C93FE8 /* AlbumTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableHeaderView.h; sourceTree = "<group>"; };
 		4F0BF9C417567C1200C93FE8 /* AlbumTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AlbumTableHeaderView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4F0D31C5178DD2A50046C61D /* MainCellGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCellGradientView.h; sourceTree = "<group>"; };
@@ -656,8 +617,6 @@
 		4F962527174EA5F4001542E8 /* UIImage+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tools.m"; sourceTree = "<group>"; };
 		4F9AED3117FA422100DD6BE2 /* ProfileStatsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileStatsCell.h; sourceTree = "<group>"; };
 		4F9AED3217FA422100DD6BE2 /* ProfileStatsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileStatsCell.m; sourceTree = "<group>"; };
-		4FA58453175FE517009C4798 /* GoogleDrive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleDrive.h; path = What/GoogleDrive.h; sourceTree = "<group>"; };
-		4FA58454175FE517009C4798 /* GoogleDrive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleDrive.m; path = What/GoogleDrive.m; sourceTree = "<group>"; };
 		4FAFF0611768E75F007AD66A /* InboxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxTableViewCell.h; sourceTree = "<group>"; };
 		4FAFF0621768E75F007AD66A /* InboxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxTableViewCell.m; sourceTree = "<group>"; };
 		4FAFF064176900C6007AD66A /* ConversationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationTableViewController.h; sourceTree = "<group>"; };
@@ -764,7 +723,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F0B386A181B0B6300845006 /* libGTLTouchStaticLib.a in Frameworks */,
 				20CF923817680A3C0051AE1A /* MessageUI.framework in Frameworks */,
 				205FE25D17A5629A0038E9CA /* libc++.dylib in Frameworks */,
 				4FF3D0B4177200770019DA76 /* Accelerate.framework in Frameworks */,
@@ -1287,27 +1245,6 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		4F0B385C181B0AE000845006 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4F0B3863181B0AE000845006 /* GTL.framework */,
-				4F0B3865181B0AE000845006 /* libGTLTouchStaticLib.a */,
-				4F0B3867181B0AE000845006 /* GTLUnitTests.octest */,
-				4F0B3869181B0AE000845006 /* DevelopmentTestTool */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4F0B3870181B0C6B00845006 /* GoogleDrive */ = {
-			isa = PBXGroup;
-			children = (
-				4F0B386D181B0C6700845006 /* GTLDrive_Sources.m */,
-				4F0B386E181B0C6700845006 /* GTLDrive.h */,
-				4F0B385B181B0AE000845006 /* GTL.xcodeproj */,
-			);
-			name = GoogleDrive;
-			sourceTree = "<group>";
-		};
 		4F14E5351774BE5100E1729B /* Inbox View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1768,20 +1705,10 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		4FA58456175FE51E009C4798 /* Google Drive */ = {
-			isa = PBXGroup;
-			children = (
-				4FA58453175FE517009C4798 /* GoogleDrive.h */,
-				4FA58454175FE517009C4798 /* GoogleDrive.m */,
-			);
-			name = "Google Drive";
-			sourceTree = "<group>";
-		};
 		4FA58457175FE528009C4798 /* File Storage Services */ = {
 			isa = PBXGroup;
 			children = (
 				4FE3FEEF17610C1B00ABF583 /* Skydrive */,
-				4FA58456175FE51E009C4798 /* Google Drive */,
 			);
 			name = "File Storage Services";
 			path = ..;
@@ -1904,7 +1831,6 @@
 				4FC1006017282D03001DCFD1 /* InfoPlist.strings */,
 				4FC1006317282D03001DCFD1 /* main.m */,
 				4FC1006517282D03001DCFD1 /* WhatCDi-Prefix.pch */,
-				4F0B386B181B0BD600845006 /* GTMOAuth2ViewTouch.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1923,7 +1849,6 @@
 		4FC100A617283040001DCFD1 /* Third Party Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				4F0B3870181B0C6B00845006 /* GoogleDrive */,
 				4F4B7E8117FB2E1300046C47 /* SwipeView */,
 				4F4CA50917DFBBB30024964C /* OpenInChrome */,
 				20E589E417CEF22800E4C5B1 /* Nimbus */,
@@ -2151,7 +2076,7 @@
 				4FC1005117282D02001DCFD1 /* Frameworks */,
 				4FC1005217282D02001DCFD1 /* Resources */,
 				4B2F95EABC9643F89F4BB10E /* Copy Pods Resources */,
-				DA8C34661A51711C009C29C6 /* ShellScript */,
+				D089BCDE461332583E743AE5 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2180,12 +2105,6 @@
 			mainGroup = 4FC1004B17282D02001DCFD1;
 			productRefGroup = 4FC1005517282D02001DCFD1 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4F0B385C181B0AE000845006 /* Products */;
-					ProjectRef = 4F0B385B181B0AE000845006 /* GTL.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				4FC1005317282D02001DCFD1 /* WhatCDi */,
@@ -2193,44 +2112,12 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		4F0B3863181B0AE000845006 /* GTL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GTL.framework;
-			remoteRef = 4F0B3862181B0AE000845006 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4F0B3865181B0AE000845006 /* libGTLTouchStaticLib.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libGTLTouchStaticLib.a;
-			remoteRef = 4F0B3864181B0AE000845006 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4F0B3867181B0AE000845006 /* GTLUnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GTLUnitTests.octest;
-			remoteRef = 4F0B3866181B0AE000845006 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4F0B3869181B0AE000845006 /* DevelopmentTestTool */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = DevelopmentTestTool;
-			remoteRef = 4F0B3868181B0AE000845006 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		4FC1005217282D02001DCFD1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4F91EAB2187F00BD00BA443F /* Icon@2x.png in Resources */,
-				4F0B386C181B0BD600845006 /* GTMOAuth2ViewTouch.xib in Resources */,
 				DA8B15551A558E92000DB698 /* AboutTable.h in Resources */,
 				4F91EAAC187F00BD00BA443F /* Icon-72@2x.png in Resources */,
 				4F91EAC5187F00C300BA443F /* Default@2x.png in Resources */,
@@ -2294,6 +2181,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		D089BCDE461332583E743AE5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DA8B15631A55AA0D000DB698 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2307,19 +2209,6 @@
 			shellPath = /bin/sh;
 			shellScript = "git=/usr/bin/git\nversion=`$git describe`\nbranch=`git symbolic-ref --short HEAD`\nurl=`git config --get remote.origin.url`\necho \"#define GIT_VERSION \\\"$version\\\"\" > \"${SRCROOT}/What/GitInfo.h\"\necho \"#define GIT_BRANCH  \\\"$branch\\\"\" >> \"${SRCROOT}/What/GitInfo.h\"\necho \"#define GIT_URL  \\\"$url\\\"\" >> \"${SRCROOT}/What/GitInfo.h\"\ntouch \"${BUILT_PRODUCTS_DIR}/Info.plist\"";
 		};
-		DA8C34661A51711C009C29C6 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Developer/iphoneentitlements401/gen_entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2327,7 +2216,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				207077A4181DD77C00916D18 /* GoogleDrive.m in Sources */,
 				205CB18F17B323810059226D /* MenuTable.m in Sources */,
 				4FC1006417282D03001DCFD1 /* main.m in Sources */,
 				4FC1006817282D03001DCFD1 /* AppDelegate.m in Sources */,
@@ -2335,7 +2223,6 @@
 				4FC1007817282D03001DCFD1 /* LoginTableViewController.m in Sources */,
 				4FC100AD17283224001DCFD1 /* HTTPRequestSingleton.m in Sources */,
 				4FC100B117283623001DCFD1 /* UIApplication+AppDimensions.m in Sources */,
-				4F0B386F181B0C6700845006 /* GTLDrive_Sources.m in Sources */,
 				203CFBCB1728CDF5008A273B /* JSONRequestSingleton.m in Sources */,
 				20743CC2172A04FC0073A28A /* AnnouncementsTableViewController.m in Sources */,
 				20743CC5172A05470073A28A /* CategoryTableViewController.m in Sources */,

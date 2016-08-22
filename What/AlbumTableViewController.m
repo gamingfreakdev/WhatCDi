@@ -14,7 +14,6 @@
 #import "HTTPRequestSingleton.h"
 #import "AppDelegate.h"
 #import "NSTask.h"
-#import "GoogleDrive.h"
 #import "AlbumTableHeaderView.h"
 #import "Skydrive.h"
 #import "UserSingleton.h"
@@ -31,7 +30,6 @@
 #import "AlbumTorrentStatsTableViewCell.h"
 #import "NSDate+Tools.h"
 #import "UIButton+Tools.h"
-#import "GoogleDrive.h"
 
 //#define AntiARCRetain(...) void *retainedThing = (__bridge_retained void *)__VA_ARGS__; retainedThing = retainedThing;
 //#define AntiARCRelease(...) void *retainedThing = (__bridge void *)__VA_ARGS__; id unretainedThing = (__bridge_transfer id)retainedThing; unretainedThing = nil
@@ -492,8 +490,11 @@
 #pragma mark - Download/Upload Files
 
 -(void)downloadTorrent:(id)sender {
+    // TODO : Re-enable downloading torrents to third party services in a better way. Write wrappers
+    //        for going up into the cloud using a better mechanism. Get the class to then deal with the
+    //        specifics.
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    if ([[GoogleDrive sharedDrive] isAuthorized]) {
+    if (false) {
         WCDTorrent *torrent = [(AlbumTorrentDownloadButton *)sender torrent];
         
         NSURLRequest *request = [[HTTPRequestSingleton sharedClient] requestWithMethod:@"GET" path:[NSString stringWithFormat:@"/torrents.php?action=download&id=%i&authkey=%@", torrent.idNum, [UserSingleton sharedInstance].authkey] parameters:nil];        
@@ -533,12 +534,8 @@
 }
 
 -(void)uploadFileToTheCloud:(NSString*)fileName fromPath:(NSString *)filePath {
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    [[GoogleDrive sharedDrive] uploadFile:fileName fromPath:filePath success:^{
-        [appDelegate showAlertBannerWithTitle:@"File Added To Google Drive" subtitle:[NSString stringWithFormat:@"%@ was successfully added to your Google Drive storage.", fileName] style:ALAlertBannerStyleSuccess];
-    } failure:^(NSError *error) {
-        [appDelegate showAlertBannerWithTitle:error.localizedFailureReason subtitle:error.localizedDescription style:ALAlertBannerStyleFailure];
-    }];
+    return;
+    //AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
 
 /*
