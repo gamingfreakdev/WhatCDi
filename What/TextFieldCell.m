@@ -42,7 +42,7 @@
             _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
             _textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
             _textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            _textField.textAlignment = UITextAlignmentLeft;
+            _textField.textAlignment = NSTextAlignmentLeft;
             [self.contentView addSubview:_textField];
         }
     }

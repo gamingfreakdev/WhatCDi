@@ -190,7 +190,7 @@ static const CGFloat cKeyboardHeight = 216.f;
 -(void)updateGoogleDriveCellText:(NSNotification *)note
 {
     SettingsGroup *settingsGroup = [self.tableData objectAtIndex:2];
-    SettingsObject *googleDriveObject = [settingsGroup.settingsObjects objectAtIndex:1];
+    //SettingsObject *googleDriveObject = [settingsGroup.settingsObjects objectAtIndex:1];
     //googleDriveObject.title = ([[GoogleDrive sharedDrive] isAuthorized] ? kSettingUnlinkGoogleDrive : kSettingLinkGoogleDrive);
     
     [self beginUpdates];
@@ -357,7 +357,7 @@ static const CGFloat cKeyboardHeight = 216.f;
         NSLog(@"sent");
     }
     
-    [self.parentController dismissModalViewControllerAnimated:YES];
+    [self.parentController dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view delegate
@@ -411,7 +411,7 @@ App Version: %@\n\
 -------------------------------- */", [Constants platformString], [[UIDevice currentDevice] systemVersion], [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]] isHTML:NO];
                 feedbackController.modalPresentationStyle = UIModalPresentationFormSheet;
                 feedbackController.mailComposeDelegate = self;
-                [self.parentController presentModalViewController:feedbackController animated:YES];
+                [self.parentController presentViewController:feedbackController animated:YES completion:nil];
             }
             
             else {

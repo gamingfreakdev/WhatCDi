@@ -280,7 +280,7 @@
             inputText.clearButtonMode = UITextFieldViewModeWhileEditing;
             inputText.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
             inputText.autocapitalizationType = UITextAutocapitalizationTypeNone;
-            inputText.textAlignment = UITextAlignmentLeft;
+            inputText.textAlignment = NSTextAlignmentLeft;
             inputText.textColor = [UIColor colorFromHexString:@"dcdad6"];
             inputText.font = [Constants appFontWithSize:14.f];
             

@@ -183,7 +183,7 @@
         } failureBlockWithError:^(id error) {
             NSLog(@"couldn't load index");
             
-            if ([[(UINavigationController *)self.window.rootViewController topViewController] isKindOfClass:[LaunchTableViewController class]] && ![(UINavigationController*)self.window.rootViewController modalViewController]) {
+            if ([[(UINavigationController *)self.window.rootViewController topViewController] isKindOfClass:[LaunchTableViewController class]] && ![(UINavigationController*)self.window.rootViewController presentedViewController]) {
                 [self showLoginFailureAlert];
             }
             
@@ -214,7 +214,7 @@
         } failureBlockWithError:^(id error) {
             NSLog(@"couldn't load user info");
             
-            if ([[(UINavigationController *)self.window.rootViewController topViewController] isKindOfClass:[LaunchTableViewController class]] && ![(UINavigationController*)self.window.rootViewController modalViewController]) {
+            if ([[(UINavigationController *)self.window.rootViewController topViewController] isKindOfClass:[LaunchTableViewController class]] && ![(UINavigationController*)self.window.rootViewController presentedViewController]) {
                 [self showLoginFailureAlert];
             }
             

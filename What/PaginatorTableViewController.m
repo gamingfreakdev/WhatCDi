@@ -60,7 +60,7 @@
     label.font = [UIFont boldSystemFontOfSize:16];
     label.textColor = [UIColor colorFromHexString:cMenuTableFontColor];
     label.backgroundColor = [UIColor clearColor];
-    label.textAlignment = UITextAlignmentCenter;
+    label.textAlignment = NSTextAlignmentCenter;
     label.shadowColor = [UIColor colorFromHexString:@"82817f"];
     label.shadowOffset = CGSizeMake(0, 1);
     

@@ -427,12 +427,12 @@ static int cMaxNumberOfRecentSearches = 10;
 -(void)scan {
     BarcodeController *reader = [[BarcodeController alloc] init];
     reader.delegate = self;
-    [self presentModalViewController:reader animated:YES];
+    [self presentViewController:reader animated:YES completion:nil];
 }
 
 -(void)handleBarcode:(NSString *)upc
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     Sequencer *sequencer = [[Sequencer alloc] init];
     [sequencer enqueueStep:^(id result, SequencerCompletion completion) {
