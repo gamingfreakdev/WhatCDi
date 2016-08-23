@@ -47,7 +47,7 @@
     CGContextSaveGState(context);
     
     UIColor *selectedColor = [UIColor colorFromHexString:cCyanColor];
-    NSArray *colorsArray = [NSArray arrayWithObjects:(id)[selectedColor CGColor], (id)[[selectedColor darkerColor] CGColor], nil];
+    NSArray *colorsArray = @[(id)[selectedColor CGColor], (id)[[selectedColor darkerColor] CGColor]];
     CGColorSpaceRef colorSpace =  CGColorSpaceCreateDeviceRGB();
     const CGFloat locations[2] = {0.0, 1.0};
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)colorsArray, locations);
