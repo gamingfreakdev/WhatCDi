@@ -3190,7 +3190,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Third Party Libraries/ZBarSDK\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -3236,7 +3236,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Third Party Libraries/ZBarSDK\"",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
 					"-ObjC",
